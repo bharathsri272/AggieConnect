@@ -13,6 +13,10 @@ from typing import List, Dict, Tuple, Any
 import logging
 from tqdm import tqdm
 import pickle
+import sys
+
+# Add src to path for imports
+sys.path.append(str(Path(__file__).parent.parent))
 
 from config import (
     EMBEDDING_MODEL_NAME, EMBEDDING_DIMENSION, MAX_SEQUENCE_LENGTH,
