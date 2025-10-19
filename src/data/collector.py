@@ -9,6 +9,10 @@ from typing import List, Dict, Any
 from urllib.parse import urljoin, urlparse
 import logging
 from tqdm import tqdm
+import sys
+
+# Add src to path for imports
+sys.path.append(str(Path(__file__).parent.parent))
 
 from config import RAW_DATA_DIR, UC_DAVIS_FAQ_URL, UC_DAVIS_SERVICES_URL, UC_DAVIS_ACADEMICS_URL
 
@@ -17,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class UC DavisDataCollector:
+class UCDavisDataCollector:
     """Collects data from UC Davis websites and FAQs."""
     
     def __init__(self, base_urls: List[str], max_pages: int = 100):
@@ -213,7 +217,7 @@ def main():
         "https://www.ucdavis.edu/dining"
     ]
     
-    collector = UC DavisDataCollector(base_urls, max_pages=200)
+    collector = UCDavisDataCollector(base_urls, max_pages=200)
     collector.collect_all_data()
     collector.save_data()
 

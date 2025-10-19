@@ -7,6 +7,10 @@ from typing import List, Dict, Any, Tuple
 import pandas as pd
 from tqdm import tqdm
 import logging
+import sys
+
+# Add src to path for imports
+sys.path.append(str(Path(__file__).parent.parent))
 
 from config import RAW_DATA_DIR, PROCESSED_DATA_DIR, CHUNK_SIZE, CHUNK_OVERLAP
 
